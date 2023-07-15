@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dispaly屬性</title>
+  </head>
+  <body>
+    <br />
+    <br />
+    <p>在網頁設計中的排版需要很清楚知道display屬性</p>
+    <p>才能在需要的時候，依據自己想要呈現的樣貌，製作出符合需求的版面</p>
+    <br />
+    <p>
+      display屬性分為：block(區塊元素）、inlink(行內元素）、inlink-block(行內區塊）
+    </p>
+    <p>
+      在CSS中可以設定display屬性，block(區塊元素）<--> inlink(行內元素）可互換
+    </p>
+    <br />
+    <br />
+    <h1>block(區塊元素)</h1>
+    <ul>
+      <li>預設寬度是100%</li>
+      <li>可以設定寬度、高度</li>
+      <li>元素上下呈現</li>
+      <li>會自動換行</li>
+      <li>可設定margin(上下左右)</li>
+      <li>可設定padding(上下左右）</li>
+      <li>ex:div、ul、li、p、h1...</li>
+    </ul>
+    <br />
+    <h1>inlink(行內元素)</h1>
+    <ul>
+      <li>同一行呈現</li>
+      <li>圖片、文字都不換行</li>
+      <li>寬度、高度不可設定，由內容撐開</li>
+      <li>margin只能設定左右</li>
+      <li>padding只能設定左右</li>
+      <li>ex:span、a、input、img...</li>
+    </ul>
+    <h1>inlink-block(行內區塊）</h1>
+    <p>是inlink也是block</p>
+    <ul>
+      <li>不會自動換行</li>
+      <li>可以設定寬度、高度</li>
+      <li>可設定margin(上下左右）</li>
+      <li>可設定padding(上下左右）</li>
+      <li>ex:img、input、select、button …等</li>
+    </ul>
+    <br />
+    <p>使用firefox瀏覽器按f12時可以看到網頁上的元素是屬於哪一種display屬性</p>
+    <blockquote class="imgur-embed-pub" lang="en" data-id="neKJppe">
+      <a href="https://imgur.com/neKJppe">View post on imgur.com</a>
+    </blockquote>
+    <script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
+    <img src="https://imgur.com/neKJppe.jpg" alt="" />
+    <br />
+    <p>如果是inlink，設定寬度、高度時會提示對此元素沒有影響(作用)</p>
+    <blockquote class="imgur-embed-pub" lang="en" data-id="coPGceN">
+      <a href="https://imgur.com/coPGceN">View post on imgur.com</a>
+    </blockquote>
+    <script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
+    <br />
+    <p>底下的例子是同樣為&lta&gt，原本使屬於inlink(行內元素）在CSS裡加上</p>
+    <p>display:block 就可以將inlink(行內元素）改變為block(區塊元素）</p>
+    <blockquote class="imgur-embed-pub" lang="en" data-id="Vi3GT3L">
+      <a href="https://imgur.com/Vi3GT3L">View post on imgur.com</a>
+    </blockquote>
+    <script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
+  </body>
+</html>
