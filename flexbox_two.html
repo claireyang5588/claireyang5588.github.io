@@ -1,1 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dispaly屬性</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+      crossorigin="anonymous"
+    />
+    <style>
+      body {
+        background-color: #303030;
+        color: white;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-size: 1.2rem;
+      }
+      span {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid">
+        <a
+          class="navbar-brand"
+          href="https://claireyang5588.github.io/index.html"
+          >首頁</a
+        >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="https://claireyang5588.github.io/Second.html"
+                >HTML</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">CSS</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                JavaScript
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Basics</a></li>
+                <li><a class="dropdown-item" href="#">Advanced</a></li>
+                <li><hr class="dropdown-divider" /></li>
+                <li>
+                  <a class="dropdown-item" href="#">Something else here</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled">Disabled</a>
+            </li>
+          </ul>
+          <form class="d-flex" role="search">
+            <input
+              class="form-control me-2"
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+            />
+            <button class="btn btn-outline-success" type="submit">
+              Search
+            </button>
+          </form>
+        </div>
+      </div>
+    </nav>
+    <br />
+    <br />
+    <p>
+      flex中的 flex-grow、flex-shrink 和 flex-basis
+      這三個屬性主要是用來做元素的伸展、收縮、寬度基準值的設定
+    </p>
+    <h1>★flex-grow</h1>
+    <p>決定排版空間如何分配，數字越大分配到的寬度越大(可填入任意整數</p>
+    <h3>container沒有設定任何寬度的情況下</h3>
+    <p>
+      內容物元素會佔滿整個頁面，設定flex-grow可以依照分配的比例調整元素的大小數字越大，分配到的寬度越大
+      <br />以下是五個box都設定flex-grow:1的情況下，會平均分配
+    </p>
+    <blockquote class="imgur-embed-pub" lang="en" data-id="adanxrD">
+      <a href="https://imgur.com/adanxrD">View post on imgur.com</a>
+    </blockquote>
+    <script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
+    <br />
+    <h3>container有設定寬度的情況下</h3>
+    <p>
+      假設我們有一個container是寬度1000px
+      <br />裡面分別有三個寬度200px、高度200px的box
+      <br />三個box以外的區域還有剩下400px
+    </p>
+    <blockquote class="imgur-embed-pub" lang="en" data-id="DfqtUDq">
+      <a href="https://imgur.com/DfqtUDq">View post on imgur.com</a>
+    </blockquote>
+    <script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
+    <br />
+    <p>
+      當在三個box都加上flex-grow:1，就會把剩下的灰色區塊平均分配到三個box上(400/3=133.333...)
+      <br />每個box就會變成200px+133.333的寬度
+    </p>
+    <blockquote class="imgur-embed-pub" lang="en" data-id="9i4qkHm">
+      <a href="https://imgur.com/9i4qkHm">View post on imgur.com</a>
+    </blockquote>
+    <script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
+    <br />
+    <p>
+      假設三個box分別加上flex-grow:1、flex-grow:2、flex-grow:3
+      <br />就會變成400/(1+2+3)=每一等分會分到66.6666.... <br />box+flex-grow:1
+      寬度會變成200+66.6666 <br />box+flex-grow:2 寬度會變成200+66.6666x2
+      <br />box+flex-grow:1 寬度會變成200+66.6666x3
+    </p>
+    <br />
+    <h1>★flex-shrink</h1>
+    <p>
+      區域空間超過的時候壓縮的比例(可填入任意整數） <br /><br />
+      假設有一個div寬度為1000px
+      <br />裡面分別有三個寬度400px的box，400x3=1200
+      <br />1200扣除原本的1000此時將會超出200
+    </p>
+    <blockquote class="imgur-embed-pub" lang="en" data-id="rYU13Tw">
+      <a href="https://imgur.com/rYU13Tw">View post on imgur.com</a>
+    </blockquote>
+    <script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
+    <br />
+    <p>
+      (p.s因爲 flex-shrink 預設爲 1
+      的關係，不夠的空間會分均分壓縮三個盒子需要先設定flex-shrink:0就會看到以上的效果)
+      <br />若各別在boxone、boxtwo、boxthree加入flex-shrink: 1、flex-shrink:
+      2、flex-shrink: 3
+      <br />超出的200就會被分成6等分，然後在依照分配的比例壓縮每一個box的寬度
+      <br />調整後box的大小將變成 <br />超出的200/6=每一等份為33.33333333
+      <br />boxone：400-33.33333333=366.666667
+      <br />boxtwo：400-(33.33333333x2)=333.333333
+      <br />boxthree：400-(33.33333333x3)=300
+    </p>
+    <blockquote class="imgur-embed-pub" lang="en" data-id="5dtZqbg">
+      <a href="https://imgur.com/5dtZqbg">View post on imgur.com</a>
+    </blockquote>
+    <script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
+    <br />
+
+    <h1>★flex-basis</h1>
+    <p>
+      用來設定元素區塊最基本的寬度(寬度的最小值）
+      <br />如果没有設置flex-basis屬性，那flex-basis的大小就是元素區塊的width屬性大小
+    </p>
+    <blockquote class="imgur-embed-pub" lang="en" data-id="s0NCd7k">
+      <a href="https://imgur.com/s0NCd7k">View post on imgur.com</a>
+    </blockquote>
+    <script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
+    <br />
+    <blockquote class="imgur-embed-pub" lang="en" data-id="yywHaD6">
+      <a href="https://imgur.com/yywHaD6">View post on imgur.com</a>
+    </blockquote>
+    <script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
+    <br />
+
+    <p>
+      如果有設置width屬性也有設置flex-basis屬性，那元素區塊(content)的大小會以flex-basis的大小為主
+    </p>
+    <blockquote class="imgur-embed-pub" lang="en" data-id="jvp6fx3">
+      <a href="https://imgur.com/jvp6fx3">View post on imgur.com</a>
+    </blockquote>
+    <script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
+    <br />
+    <p>
+      flex-shrink、flex-grow、flex-basis可以整合使用 <br />flex:flex grow, flex
+      shrink and flex basis
+      <br />因此以下的區塊設定flex-basis之後有多出來的區(1000-100-150x3-300)=150
+    </p>
+    <blockquote class="imgur-embed-pub" lang="en" data-id="xZe0OTm">
+      <a href="https://imgur.com/xZe0OTm">View post on imgur.com</a>
+    </blockquote>
+    <script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
+    <br />
+
+    <p>
+      要分配給box3、box4，所以在box3、box4都加上flex-grow:1
+      <br />剩下150/2=75，則box3、box4就會變成150+75=225
+    </p>
+    <blockquote class="imgur-embed-pub" lang="en" data-id="n9FDhPQ">
+      <a href="https://imgur.com/n9FDhPQ">View post on imgur.com</a>
+    </blockquote>
+    <script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
 
