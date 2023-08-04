@@ -13,6 +13,7 @@
     />
     <style>
       body {
+        /* background-color: #303030; */
         background-image: url("https://images.unsplash.com/photo-1664179550988-5cc4755ab6e5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDF8Q0R3dXdYSkFiRXd8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=60");
         color: white;
         margin: 0;
@@ -35,6 +36,10 @@
       .cb {
         color: black;
         font-weight: bolder;
+      }
+
+      .code_context {
+        width: 500px;
       }
 
       .part {
@@ -127,8 +132,8 @@
       <br />
       <br />
       <p>
-        CSS position也是網頁排版中，重要的代表之一
-        position指的是“位置”，也就是透過CSS position可以調整元素在網頁中的位置
+        CSS position也是網頁排版中，重要的代表之一<br />position指的是“位置”，也就是透過CSS
+        position可以調整元素在網頁中的位置
       </p>
       <p>
         position可使用的值有：<br />
@@ -158,13 +163,15 @@
       <script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
       <p>當在box2設定position: relative且調整left: 200px;top: 100px;</p>
       <br />
-      <pre><code class="cb"> 
+      <div class="code_context">
+        <pre><code class="cb"> 
        .box1 { background-color: lawngreen; } 
        .box2 { background-color: aqua;
                position: relative; 
                left: 200px; top: 100px; } 
        .box3 { background-color:yellow; }
-      </code></pre>
+       </code></pre>
+      </div>
       <p>
         box2(亮藍)就會先往自己的左邊移動200px(這裡每一個小格是100x100)，然後在往下移動100px
       </p>
@@ -181,7 +188,8 @@
         <a href="https://imgur.com/IlTHG2G">View post on imgur.com</a>
       </blockquote>
       <script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
-      <pre><code class="cb"> 
+      <div class="code_context">
+        <pre><code class="cb"> 
         .box1 { background-color: lawngreen; } 
         .box2 { background-color:aqua;
                 position: relative; 
@@ -190,7 +198,9 @@
                 z-index: 1; }
         .box3{background-color: yellow;
               position: relative;
-              z-index: 2; }</code></pre>
+              z-index: 2; }
+            </code></pre>
+      </div>
       <br />
       <blockquote class="imgur-embed-pub" lang="en" data-id="uRBAw07">
         <a href="https://imgur.com/uRBAw07">View post on imgur.com</a>
