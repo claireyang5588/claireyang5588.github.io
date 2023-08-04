@@ -143,11 +143,11 @@
       </blockquote>
       <script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
       <p>當在box2設定position: relative且調整left: 200px;top: 100px;</p>
-      <code
-        >.box1 { background-color: lawngreen; } .box2 { background-color: aqua;
-        position: relative; left: 200px; top: 100px; } .box3 { background-color:
-        yellow; }</code
-      >
+       <pre><code class="cb"> 
+       .box1 { background-color: lawngreen; } 
+       .box2 { background-color: aqua;position: relative; left: 200px; top: 100px; } 
+       .box3 { background-color:yellow; }
+      </code>
       <p>
         box2(亮藍)就會先往自己的左邊移動200px(這裡每一個小格是100x100)，然後在往下移動100px
       </p>
@@ -170,7 +170,7 @@
       integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
       crossorigin="anonymous"
     ></script>
-    <code>
+      <pre><code class="cb"> 
       .box1 { background-color: lawngreen; } .box2 { background-color:
       aqua;position: relative; left: 50px; top: 50px; z-index: 1; }
       .box3{background-color: yellow; position: relative; z-index: 2; }
