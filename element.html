@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>flex(一)</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+      crossorigin="anonymous"
+    />
+    <style>
+      body {
+        /* background-color: #303030; */
+        background-image: url("https://images.unsplash.com/photo-1664179550988-5cc4755ab6e5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDF8Q0R3dXdYSkFiRXd8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=60");
+        color: white;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-size: 1.2rem;
+      }
+
+      .fix {
+        position: fixed;
+        width: 100%;
+      }
+
+      nav {
+        background-color: #8fcffc;
+      }
+      .sticky {
+        background-color: white;
+        opacity: 0.9;
+        border-style: outset;
+        border-width: 5px;
+      }
+
+      /* li a:hover {
+        color: blue;
+      } */
+
+      span {
+        color: red;
+      }
+
+      main {
+        margin: 0px 300px;
+        padding: 50px 0 0 0;
+      }
+
+      pre {
+        background-color: white;
+        border-radius: 3px;
+      }
+      .cb {
+        color: black;
+        font-weight: bolder;
+      }
+
+      .code_context {
+        width: 500px;
+      }
+
+      .part {
+        color: blue;
+      }
+      @media screen and (max-width: 800px) {
+        body {
+          font-size: 1rem;
+        }
+        main {
+          margin: 10px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- <nav class="navbar navbar-expand-lg bg-body-tertiary fix"> -->
+    <nav class="navbar navbar-light navbar-expand-lg fixed-top">
+      <div class="container-fluid">
+        <a
+          class="navbar-brand"
+          href="https://claireyang5588.github.io/index.html"
+          >首頁</a
+        >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="https://claireyang5588.github.io/HTML.html"
+                >HTML</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                href="https://claireyang5588.github.io/CSS.html"
+                >CSS</a
+              >
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                JavaScript
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Basics</a></li>
+                <li><a class="dropdown-item" href="#">Advanced</a></li>
+                <li><hr class="dropdown-divider" /></li>
+                <li>
+                  <a class="dropdown-item" href="#">Something else here</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled">Disabled</a>
+            </li>
+          </ul>
+          <form class="d-flex" role="search">
+            <input
+              class="form-control me-2"
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+            />
+            <button class="btn btn-outline-success" type="submit">
+              Search
+            </button>
+          </form>
+        </div>
+      </div>
+    </nav>
+    <main>
+      <p>
+        在CSS排版中調整元素之間的距離，通常使用的就是margin(邊界）、padding(邊距)
+      </p>
+      <p>若要在元素增加外框美化，就可以使用border(邊框)來做調整</p>
+      <br />
+      <p>
+        在網頁上按下F12(或滑鼠右鍵按下檢視），查看網頁原始碼中的box Model
+        <br />即可查看元素的margin(邊界）、padding(邊距)、border(邊框)的設定
+      </p>
+      <blockquote class="imgur-embed-pub" lang="en" data-id="MBOaLTk">
+        <a href="https://imgur.com/MBOaLTk">View post on imgur.com</a>
+      </blockquote>
+      <script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
+      <br />
+      <h2>margin</h2>
+      <p>該元素與其他元素間的邊界距離，可透過以下方式調整元素邊界的距離</p>
+      <p>margin-top:上邊界</p>
+      <p>margin-right：右邊界</p>
+      <p>margin-bottom:下邊界</p>
+      <p>margin-left:左邊界</p>
+      <br />
+      <p>舉例以下有三個併列的box</p>
+      <blockquote class="imgur-embed-pub" lang="en" data-id="4N2F0L2">
+        <a href="https://imgur.com/4N2F0L2">View post on imgur.com</a>
+      </blockquote>
+      <script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
+      <p>
+        分別在這三個box的CSS加上
+        <br />margin-top:0px、margin-top:10px、margin-top:20px
+        <br />結果如下，原本並列的box，黃色和粉橘色的box跟上方的邊距分別隔開了10px、20px
+        <br />(px：絕對單位，代表螢幕中每個「點」( pixel ))
+      </p>
+      <blockquote class="imgur-embed-pub" lang="en" data-id="ZHW9Wrg">
+        <a href="https://imgur.com/ZHW9Wrg">View post on imgur.com</a>
+      </blockquote>
+      <script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
+      <br />
+      <p>
+        調整的邊距的寫法可接受1-4個數值(可以是數字或百分比)
+        <br />margin: 0px 2px 5px 3px (上右下左 <br />margin: 2px 10px
+        (上下;右左） <br />margin: 2px 10px 5px (上;左右;下） <br />margin:
+        2px(上下左右）
+      </p>
+      <br />
+      <h2>padding</h2>
+      <p>
+        元素內容的周圍 <br />分別在這三個box的CSS加上 <br />padding-top:
+        0px、padding-top:10px、padding-top:20px
+        <br />結果如下，原本貼近上邊界的文字內容，就會依照設定的padding距離而變動
+      </p>
+      <blockquote class="imgur-embed-pub" lang="en" data-id="MJTjp6E">
+        <a href="https://imgur.com/MJTjp6E">View post on imgur.com</a>
+      </blockquote>
+      <script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
+      <br />
+      <h2>border</h2>
+      <p>
+        元素的最外圍(外框） <br />
+        <br />
+        border-style:線條樣式
+        <br />solid(實線）、dashed(虛線）、double(雙線）後面可以加上顏色
+        <br />
+        <br />border-width:邊框粗細 <br />thin(細)、medium(中)、thick(粗）
+        <br />也可以輸入px、rem..等單位數字
+        <br />
+        <br />border-color:線條顏色
+        <br />
+        <br />如果要同時設定外框的顏色、線條、粗細度，可以整合一起
+        <br />
+        <br />border：0.5rem solid black
+        <br />(rem：相對單位，每個元素透過「倍數」乘以根元素的 px 值)
+        <br />
+        <br />外框的四邊如果要用不同的樣式呈現 <br />border-style:dotted solid
+        double dashed(上右下左） <br />上下左右 或 上下;右左 可以參考margin
+        <br />
+        <br />外邊橢圓角: <br />
+        border-radius: 10px;(上右下左）
+        <br />
+        <br />完整的CSS如下：
+      </p>
+      <div class="code_context">
+        <pre><code class="cb"> 
+            .box1 {
+                background-color: aqua;
+                /* border: 10px black solid;
+                padding: 2px 2px; */
+                margin: 0px;
+                padding-top: 10px;
+                border: 0.5rem solid black;
+              }
+              .box2 {
+                background-color: gold;
+                margin: 10px;
+                padding-top: 20px;
+                border: 0.5rem dashed red;
+              }
+              .box3 {
+                background-color: darksalmon;
+                margin: 20px;
+                padding-top: 30px;
+                border: 0.5rem double blue;
+                border-radius: 10px;
+              } 
+            </code></pre>
+      </div>
+      <blockquote class="imgur-embed-pub" lang="en" data-id="lAFfawh">
+        <a href="https://imgur.com/lAFfawh">View post on imgur.com</a>
+      </blockquote>
+      <script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
+    </main>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      window.addEventListener("scroll", function () {
+        let nav = document.querySelector("nav");
+        nav.classList.toggle("sticky", window.scrollY > 0);
+        // console.log(window.scrollY);
+      });
+    </script>
+  </body>
+</html>
