@@ -3,6 +3,24 @@
   <head>
     <meta charset="utf-8" />
     <title>Claire's Bolg</title>
+  <script>
+      window.difyChatbotConfig = {
+        token: "f5zmUkV3e7kaCUBp",
+        systemVariables: {
+          // user_id: 'YOU CAN DEFINE USER ID HERE',
+          // conversation_id: 'YOU CAN DEFINE CONVERSATION ID HERE, IT MUST BE A VALID UUID',
+        },
+        userVariables: {
+          // avatar_url: 'YOU CAN DEFINE USER AVATAR URL HERE',
+          // name: 'YOU CAN DEFINE USER NAME HERE',
+        },
+      };
+    </script>
+    <script
+      src="https://udify.app/embed.min.js"
+      id="f5zmUkV3e7kaCUBp"
+      defer
+    ></script>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -17,6 +35,13 @@
       h2,
       h3 {
         color: white;
+      }
+       #dify-chatbot-bubble-button {
+        background-color: #1c64f2 !important;
+      }
+      #dify-chatbot-bubble-window {
+        width: 24rem !important;
+        height: 40rem !important;
       }
     </style>
   </head>
